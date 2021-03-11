@@ -1,5 +1,4 @@
 //Why can't we define these inside of the function?
-
 //Puts element with content id inside of the contentElem
 let contentElem = document.getElementById("content");
 //Creates pElem with `<p>` tag in it
