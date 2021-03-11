@@ -31,6 +31,7 @@
 //Part 1
 //Why doesn't this work?
 // let jumbotronElem = document.getElementsByClassName("jumbotron");
+
 let jumbotronElem = document.querySelector(".jumbotron");
 
 let donateButtonElem = document.querySelector(".btn.btn-primary.btn-lrg");
@@ -39,8 +40,6 @@ let volunteerButtonElem = document.querySelector(".btn.btn-secondary.btn-lrg");
 donateButtonElem.classList.add("donate-btn");
 volunteerButtonElem.classList.add("volunteer-btn");
 
-// How to use this without removing the previous
-// donateButtonElem.setAttribute("class", " donate-btn");
 
 let blueButtonElem = document.getElementById("blueBtn");
 let orangeButtonElem = document.getElementById("orangeBtn");
@@ -69,4 +68,46 @@ function orangeButtonClick() {
 blueButtonElem.addEventListener("click", blueButtonClick);
 greenButtonElem.addEventListener("click", greenButtonClick);
 orangeButtonElem.addEventListener("click", orangeButtonClick);
+
+//Part 2
+
+let emailInputElem = document.getElementById("exampleInputEmail1");
+let nameInputElem = document.getElementById("example-text-input");
+let describeElem = document.getElementById("exampleTextarea");
+
+let submitButtonElem = document.querySelector("form button");
+
+submitButtonElem.addEventListener("click", submitForm);
+
+function submitForm(event) {
+  if (
+    emailInputElem.value.length !== 0 &&
+    emailInputElem.value.includes("@") === true &&
+    nameInputElem.value.length !== 0 &&
+    describeElem.value.length !== 0
+  ) {
+    window.alert("Thank you for filling out the form!");
+    emailInputElem.value = "";
+    emailInputElem.style.background = "white";
+    nameInputElem.value = "";
+    nameInputElem.style.background = "white";
+    describeElem.value = "";
+    describeElem.style.background = "white";
+
+    correct - input;
+  }
+  if (
+    emailInputElem.value.length === 0 ||
+    emailInputElem.value.includes("@") === false
+  ) {
+    emailInputElem.style.background = "red";
+  }
+  if (nameInputElem.value.length === 0) {
+    nameInputElem.style.background = "red";
+  }
+  if (describeElem.value.length === 0) {
+    describeElem.style.background = "red";
+  }
+  event.preventDefault();
+}
 
